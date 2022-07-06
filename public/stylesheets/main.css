@@ -1,0 +1,73 @@
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+main > h1 {
+  text-align: center;
+
+  padding: 15px 0;
+  border-bottom: 3px solid #f6f6f6;
+
+  font-size: 14px;
+}
+
+.mainPage__banner {
+  width: 100%;
+  height: 150px;
+  background-image: url(../images/banner.png);
+  background-position: center;
+  background-color: var(--woowa-color);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mainPage__login {
+  position: relative;
+  padding: 15px 10px;
+
+  color: darkgray;
+
+  font-size: 20px;
+}
+
+.mainPage__login span::after {
+  content: ">";
+  position: absolute;
+
+  right: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.mainPage__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mainPage__wrapper > img {
+  width: 50px;
+}
+
+.mainPage__menuBox {
+  width: 100%;
+  height: 150px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.mainPage__menu {
+  text-align: center;
+  border: 1px solid #f6f6f6;
+}
+
+.delimiter {
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 30px;
+}

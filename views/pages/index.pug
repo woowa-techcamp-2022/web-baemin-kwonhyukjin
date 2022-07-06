@@ -1,5 +1,32 @@
 extends ../layout
+include ../common/LinkTab
+
+block stylesheet
+  link(rel="stylesheet", href="/stylesheets/main.css")
+  link(rel="stylesheet", href="/stylesheets/common/LinkTab.css")
 
 block content
-  h1 This is Main page
-  p letsgo
+  main(class="mainPage")
+    h1 My배민
+    div(class="mainPage__banner")
+
+    +LinkTab('로그인해주세요', '/signin', '/images/profile.png')
+        
+    div(class="mainPage__menuBox")
+      a(class="mainPage__menu" href="#menu") A
+      a(class="mainPage__menu" href="#menu") B
+      a(class="mainPage__menu" href="#menu") C 
+      a(class="mainPage__menu" href="#menu") D
+      a(class="mainPage__menu" href="#menu") E
+      a(class="mainPage__menu" href="#menu") F
+    .delimiter 
+    |
+    +LinkTab("일회용품 덜 쓰기, 함께해요!", '#')
+    .delimiter 
+    |
+    +LinkTab("베민페이 등록", '#')
+    +LinkTab("가족 계정 관리", '#')
+    +LinkTab("공지사항", '#')
+    +LinkTab("배민 커넥트 지원", '#')
+
+
