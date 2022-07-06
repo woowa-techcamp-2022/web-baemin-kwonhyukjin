@@ -3,6 +3,11 @@ body {
   margin: 0 auto;
 }
 
+body > main {
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -1,0 +1,28 @@
+.linkTab {
+  position: relative;
+  padding: 15px 10px;
+
+  color: darkgray;
+
+  font-size: 20px;
+}
+
+.linkTab span::after {
+  content: ">";
+  position: absolute;
+
+  right: 15px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.linkTab__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.linkTab__wrapper > img {
+  width: 50px;
+}

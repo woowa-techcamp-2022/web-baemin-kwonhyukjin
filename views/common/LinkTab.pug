@@ -1,0 +1,6 @@
+mixin LinkTab(text, href, src) 
+    a(class="linkTab" href=href) 
+        div.linkTab__wrapper
+            if (src)
+                img(src=src)
+            span=text
