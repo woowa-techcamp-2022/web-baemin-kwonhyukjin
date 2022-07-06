@@ -1,5 +1,23 @@
 extends ../layout
+include ../common/Header
+
+
+mixin plainInput(placeholder, type)
+  input(class="plainInput", type=type, placeholder=placeholder)
+
+block stylesheet
+  link(rel="stylesheet", href="/stylesheets/common/Header.css")
+  link(rel="stylesheet", href="/stylesheets/pages/signin.css")
 
 block content
-  h1 this is signin page
-  p gogo
+  main.signinPage
+    +Header('')
+
+    .signInPage__form
+      form(action="submit") 
+        +plainInput("아이디 또는 이메일", "text")
+        +plainInput("비밀번호", "password")
+      button="로그인"
+
+    
+

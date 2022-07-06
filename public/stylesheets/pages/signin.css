@@ -1,0 +1,30 @@
+.plainInput {
+  padding: 15px 0;
+  border: none;
+  border-bottom: 1px solid lightgray;
+}
+
+.plainInput::placeholder {
+  color: lightgray;
+}
+
+.plainInput:focus {
+  outline: none;
+}
+
+.signinPage {
+  padding: 0 15px;
+  height: 90vh;
+}
+
+.signInPage__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signInPage__form > form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
