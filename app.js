@@ -13,7 +13,6 @@ app.set("views", [
   path.join(__dirname, "views"),
   path.join(__dirname, "views/pages"),
   path.join(__dirname, "views/pages/signup"),
-  path.join(__dirname, "views/pages/signup/email"),
   path.join(__dirname, "views/common"),
 ]);
 app.set("view engine", "pug");
