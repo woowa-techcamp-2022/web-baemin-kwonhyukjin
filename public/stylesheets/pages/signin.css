@@ -31,10 +31,38 @@
   gap: 20px;
 }
 
+.signinPage__form > form > button {
+  margin-top: 30px;
+}
+
 .signinPage__form > form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+}
+
+.signinPage__form > form > input {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.signinPage__form > form > span {
+  position: relative;
+}
+
+.signinPage__form > form > input[id="email"].error + span::after {
+  position: absolute;
+  bottom: 10px;
+  content: "이메일을 입력하세요";
+  color: red;
+  font-size: 10px;
+}
+
+.signinPage__form > form > input[id="pwd"].error + span::after {
+  position: absolute;
+  bottom: 10px;
+  content: "비밀번호를 입력하세요";
+  color: red;
+  font-size: 10px;
 }
 
 .signinPage__join {
@@ -59,7 +87,7 @@
   margin-right: 5px;
 }
 
-.signinPage__join > p > button {
+.signinPage__join > p > a {
   font-size: 14px;
   color: var(--woowa-color);
 }

@@ -3,8 +3,8 @@ include ../common/Header
 include ../common/WoowaButton
 
 
-mixin plainInput(placeholder, type)
-  input(class="plainInput", type=type, placeholder=placeholder)
+mixin plainInput(placeholder, type, id)
+  input(class="plainInput", type=type, placeholder=placeholder id=id || '')
 
 block stylesheet
   link(rel="stylesheet", href="/stylesheets/common/Header.css")
@@ -16,11 +16,13 @@ block content
     +Header('', '/')
 
     .signinPage__form
-      form(action="submit") 
-        +plainInput("아이디 또는 이메일", "text")
-        +plainInput("비밀번호", "password")
-      +WoowaButton
-        | 로그인
+      form(action="#") 
+        +plainInput("아이디 또는 이메일", "text", 'email')
+        span 
+        +plainInput("비밀번호", "password", 'pwd')
+        span
+        +WoowaButton
+          | 로그인
     
     .signinPage__find
       a(href="#find-id") 아이디 찾기
@@ -34,7 +36,5 @@ block content
 
       p 
         span 혹시, 배달의민족이 처음이신가요?
-        button="회원가입"
-
-    
-
+        a(href="/signup") 회원가입
+  script(src="/javascripts/signin.js" type="module")
