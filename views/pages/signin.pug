@@ -1,5 +1,6 @@
 extends ../layout
 include ../common/Header
+include ../common/WoowaButton
 
 
 mixin plainInput(placeholder, type)
@@ -7,17 +8,33 @@ mixin plainInput(placeholder, type)
 
 block stylesheet
   link(rel="stylesheet", href="/stylesheets/common/Header.css")
+  link(rel="stylesheet", href="/stylesheets/common/Button.css")
   link(rel="stylesheet", href="/stylesheets/pages/signin.css")
 
 block content
   main.signinPage
     +Header('', '/')
 
-    .signInPage__form
+    .signinPage__form
       form(action="submit") 
         +plainInput("아이디 또는 이메일", "text")
         +plainInput("비밀번호", "password")
-      button="로그인"
+      +WoowaButton
+        | 로그인
+    
+    .signinPage__find
+      a(href="#find-id") 아이디 찾기
+      div |
+      a(href="#find-pwd") 비밀번호 찾기
+
+    .signinPage__join
+      button 페아로
+      button 네아로
+      button 에아로
+
+      p 
+        span 혹시, 배달의민족이 처음이신가요?
+        button="회원가입"
 
     
 
