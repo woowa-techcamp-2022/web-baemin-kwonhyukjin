@@ -1,11 +1,18 @@
 body {
-  width: 375px;
-  margin: 0 auto;
+  background-color: var(--woowa-color);
 }
 
-body > main {
-  border: 1px solid black;
+.app {
+  width: 375px;
+  margin: 25px auto;
+  background-color: white;
+  overflow: hidden;
   border-radius: 8px;
+  border: 1px solid black;
+}
+
+.app > * {
+  width: 100%;
 }
 
 * {
