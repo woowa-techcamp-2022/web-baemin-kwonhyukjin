@@ -1,8 +1,15 @@
-main.terms {
+.terms {
   display: flex;
   flex-direction: column;
   padding: 0 15px;
   padding-bottom: 15px;
+}
+
+.terms > form {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .terms > h2 {
@@ -110,10 +117,6 @@ main.terms {
   top: 0;
 }
 
-.terms > .term:first-of-type {
-  margin-top: 16px;
-}
-
 .terms__wrapper {
   display: flex;
   flex-direction: column;
@@ -130,6 +133,6 @@ main.terms {
   margin: 15px 0;
 }
 
-main.terms > .woowaButton {
+main.terms > form > .woowaButton {
   margin-top: auto;
 }

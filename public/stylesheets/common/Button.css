@@ -8,3 +8,7 @@
   border-radius: 8px;
   text-align: center;
 }
+
+.woowaButton:disabled {
+  background-color: var(--gray-1);
+}

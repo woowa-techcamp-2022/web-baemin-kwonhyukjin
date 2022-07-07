@@ -1,6 +1,6 @@
-mixin WoowaButton(isLink=false, href)
-    if (isLink && href) 
-        a.woowaButton(href=href)
+mixin WoowaButton(disabled=true)
+    if (disabled)
+        button.woowaButton(disabled)
             if block
                 block
     else 
