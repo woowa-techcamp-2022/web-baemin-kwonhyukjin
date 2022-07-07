@@ -1,7 +1,7 @@
 .header {
   text-align: center;
 
-  padding: 30px 0;
+  padding: 20px 0;
 
   position: relative;
 }
@@ -13,4 +13,6 @@
 .header a {
   position: absolute;
   left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }

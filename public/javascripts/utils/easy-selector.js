@@ -4,3 +4,9 @@ export const $ = (selector) => {
 
   return result;
 };
+
+export const $$ = (selector) => {
+  const result = document.querySelectorAll(selector);
+
+  return result;
+};

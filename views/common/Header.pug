@@ -1,7 +1,7 @@
 mixin Header(text, fallback)
     header(class="header")
         h1=text
-        if (fallback === '/')
+        if (fallback === '/' || fallback === '/signin')
             a(class="header__fallback" href=fallback)="X"
-        if (fallback === '/signin')
+        else if (fallback !== undefined)
             a(class="header__fallback" href=fallback)="<"
