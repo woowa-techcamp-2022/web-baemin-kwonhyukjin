@@ -17,9 +17,24 @@ block content
     +Term('전체 선택', 'all-accept', true)
     .delimiter
 
-    - var terms = [{text: '배달의민족 이용약관 동의', id: 'term1'}, {text: '전자금융거래 이용약관 동의', id: 'term2'}, {text: '개인정보 수집이용 동의', id: 'term3'}, {text: '개인정보 제3자 제공 동의 (선택)', id: 'term4'}, {text: '마케팅 정보 메일, SMS 수신동의 (선택)', id: 'term5'}]
+    - const terms = [{text: '배달의민족 이용약관 동의', id: 'term1'}, {text: '전자금융거래 이용약관 동의', id: 'term2'}, {text: '개인정보 수집이용 동의', id: 'term3'}, {text: '개인정보 제3자 제공 동의 (선택)', id: 'term4'}, {text: '마케팅 정보 메일, SMS 수신동의 (선택)', id: 'term5'}]
     .terms__wrapper
-      each term in terms
+      each term in terms 
         +Term(term.text, term.id)
 
     .delimiter  
+
+    .terms__age-check 
+      label.terms__ageRadio(for="over14") 
+        input(type="radio" id="over14" name="age-check")
+        label(class="fake" for="over14")
+        .terms__text-box
+          p 만 14세 이상입니다.
+
+      label.terms__ageRadio
+        input(type="radio" id="under14" name="age-check")
+        label(class ="fake" for="under14")
+        .terms__text-box
+          p 만 14세 미만입니다.
+          p.light 본인확인이 된 보호자의 배민계정이 필요해요.
+
