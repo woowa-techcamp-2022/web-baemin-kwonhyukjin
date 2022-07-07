@@ -20,8 +20,21 @@ main.phone > button {
   border: 1px solid black;
 }
 
-.phone > .phone__certificate-input {
+.phone > .phone__certificate-box {
   display: none;
+}
+
+.phone > .phone__certificate-box.visible {
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+.phone > .phone__certificate-box.visible > .phone__re-certificate-btn {
+  margin-top: 25px;
+  align-self: flex-end;
+  color: var(--woowa-color);
 }
 
 .phone__certificate-btn:disabled {

@@ -6,7 +6,8 @@ import {
 } from "./utils/validation.js";
 
 const phoneInput = $(".phone__phone-input input");
-const certificateNumInput = $(".phone__certificate-input");
+const certificateNumBox = $(".phone__certificate-box");
+const certificateNum = certificateNumBox.querySelector("input");
 
 const requestCertificateNumBtn = $(".phone__certificate-btn");
 
@@ -14,18 +15,18 @@ const validPhoneCheckBox = $(".phone__phone-input .completed");
 const validCertificateNumCheckBox = $(".phone__certificate-input .completed");
 
 const completeBtn = $(".phone .header__next");
-console.log(completeBtn);
+const reRequestCertificateBtn = $(".phone__re-certificate-btn");
 
 const fillRandomCertificateNum = (element) => {
+  element.value = "";
+  validCertificateNumCheckBox.classList.remove("valid");
+  completeBtn.classList.remove("active");
+
   setTimeout(() => {
     element.value = getRandomNum(4);
     const isCertficateNumValid = getIsCertificateNumValid(element.value);
     validCertificateNumCheckBox.classList.toggle("valid", isCertficateNumValid);
-
-    if (isCertficateNumValid) {
-      console.log("is success");
-      completeBtn.classList.add("active");
-    }
+    completeBtn.classList.toggle("active", isCertficateNumValid);
   }, 2000);
 };
 
@@ -47,15 +48,18 @@ const attachEvent = () => {
     }
   });
 
-  requestCertificateNumBtn.addEventListener("click", (e) => {
+  requestCertificateNumBtn.addEventListener("click", () => {
     requestCertificateNumBtn.classList.add("hide");
-    certificateNumInput.classList.add("visible");
+    certificateNumBox.classList.add("visible");
 
-    const certificateNum = certificateNumInput.querySelector("input");
+    fillRandomCertificateNum(certificateNum);
+  });
+
+  reRequestCertificateBtn.addEventListener("click", () => {
     fillRandomCertificateNum(certificateNum);
   });
 };
 
-window.addEventListener("DOMContentLoaded", (e) => {
+window.addEventListener("DOMContentLoaded", () => {
   attachEvent();
 });

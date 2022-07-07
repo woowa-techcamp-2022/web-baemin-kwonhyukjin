@@ -15,7 +15,9 @@ block content
 
     button(type="button" disabled).phone__certificate-btn 인증번호 받기
 
-    +CustomInput('인증번호', '인증번호를 입력해주세요.', "phone__certificate-input")
+    .phone__certificate-box
+      +CustomInput('인증번호', '인증번호를 입력해주세요.', "phone__certificate-input")
+      button.phone__re-certificate-btn 인증번호 다시받기
 
 
   script(src="/javascripts/customInput.js" type="module")
