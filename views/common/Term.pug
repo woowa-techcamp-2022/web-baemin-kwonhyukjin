@@ -1,7 +1,8 @@
-mixin Term(text, name, className="term")
+mixin Term(text, name, isAllAcceptBtn=false, className="term")
     div(class=className ||  "term " + className)
         input(type="checkbox", id=name)
         label.fake(for=name)
         label(class="real" id=name for=name)=text
 
-        a(href="#")=">"
+        if (!isAllAcceptBtn)
+            a(href="#")=">"

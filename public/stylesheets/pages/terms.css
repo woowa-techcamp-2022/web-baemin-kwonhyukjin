@@ -2,7 +2,31 @@ main.terms {
   padding: 0 15px;
 }
 
+.terms > h2 {
+  margin: 35px 0;
+}
+
 .terms > h2 > p {
   font-size: 18px;
   font-weight: 500;
+}
+
+.terms > .term:first-of-type {
+  margin-top: 16px;
+}
+
+.terms__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.delimiter {
+  width: 100%;
+  height: 1px;
+
+  background-color: var(--gray-1);
+
+  margin: 15px 0;
 }
