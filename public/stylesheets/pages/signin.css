@@ -14,9 +14,6 @@
 
 .signinPage {
   padding: 15px;
-  padding-top: 0;
-  padding-bottom: 30px;
-  height: 90vh;
 
   display: flex;
   flex-direction: column;
