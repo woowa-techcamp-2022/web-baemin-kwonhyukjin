@@ -1,0 +1,73 @@
+.customInput {
+  width: 100%;
+}
+
+.customInput > label {
+  color: var(--gray-1);
+}
+
+.customInput.focused > label {
+  color: black;
+}
+
+.customInput.focused > .customInput__wrapper > .close,
+.customInput__wrapper > .completed {
+  display: inline;
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: var(--gray-3);
+}
+
+.customInput__wrapper > .completed.valid {
+  color: var(--woowa-color);
+}
+
+.close > button {
+  color: white;
+  background-color: var(--gray-1);
+
+  font-size: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  text-align: center;
+}
+
+.customInput__wrapper {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid var(--gray-1);
+}
+
+.customInput.focused > .customInput__wrapper {
+  border-bottom: 1px solid black;
+}
+
+.customInput__wrapper > .close {
+  display: none;
+}
+
+.customInput.focused > .customInput__wrapper > .completed {
+  display: none;
+}
+
+.customInput__wrapper > input {
+  display: block;
+  width: 100%;
+
+  border: none;
+  padding: 10px 0;
+}
+
+.customInput__wrapper > input:focus {
+  outline: none;
+}
+
+.customInput__wrapper > input::placeholder {
+  color: var(--gray-1);
+}
