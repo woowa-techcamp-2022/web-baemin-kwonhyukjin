@@ -1,0 +1,16 @@
+.header {
+  text-align: center;
+
+  padding: 30px 0;
+
+  position: relative;
+}
+
+.header h1 {
+  font-size: 16px;
+}
+
+.header a {
+  position: absolute;
+  left: 0;
+}

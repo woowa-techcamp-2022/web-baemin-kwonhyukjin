@@ -1,0 +1,107 @@
+.plainInput {
+  padding: 15px 0;
+  border: none;
+  border-bottom: 1px solid var(--gray-1);
+}
+
+.plainInput::placeholder {
+  color: var(--gray-1);
+}
+
+.plainInput:focus {
+  outline: none;
+}
+
+.signinPage {
+  padding: 15px;
+  padding-top: 0;
+  padding-bottom: 30px;
+  height: 90vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.signinPage__form {
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signinPage__form > form > button {
+  margin-top: 30px;
+}
+
+.signinPage__form > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signinPage__form > form > input {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.signinPage__form > form > span {
+  position: relative;
+}
+
+.signinPage__form > form > input.error {
+  border-bottom: 1px solid red;
+}
+
+.signinPage__form > form > input[id="email"].error + span::after {
+  position: absolute;
+  bottom: 10px;
+  content: "이메일을 입력하세요";
+  color: red;
+  font-size: 10px;
+}
+
+.signinPage__form > form > input[id="pwd"].error + span::after {
+  position: absolute;
+  bottom: 10px;
+  content: "비밀번호를 입력하세요";
+  color: red;
+  font-size: 10px;
+}
+
+.signinPage__join {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: auto;
+}
+
+.signinPage__join > button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gray-3);
+  border-radius: 8px;
+}
+
+.signinPage__join > p > span {
+  font-size: 14px;
+  color: var(--gray-3);
+  margin-right: 5px;
+}
+
+.signinPage__join > p > a {
+  font-size: 14px;
+  color: var(--woowa-color);
+}
+
+.signinPage__find {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.signinPage__find > * {
+  color: var(--gray-3);
+}

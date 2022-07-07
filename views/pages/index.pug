@@ -1,13 +1,16 @@
 extends ../layout
+include ../common/Header
 include ../common/LinkTab
 
 block stylesheet
-  link(rel="stylesheet", href="/stylesheets/main.css")
+  link(rel="stylesheet", href="/stylesheets/pages/main.css")
   link(rel="stylesheet", href="/stylesheets/common/LinkTab.css")
+  link(rel="stylesheet", href="/stylesheets/common/Header.css")
 
 block content
   main(class="mainPage")
-    h1 My배민
+    +Header('My배민')
+
     div(class="mainPage__banner")
 
     +LinkTab('로그인해주세요', '/signin', '/images/profile.png')
