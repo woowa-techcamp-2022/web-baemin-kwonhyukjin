@@ -5,4 +5,5 @@ mixin CustomInput(label, placeholder, className, type="text")
             input(type=type id=label placeholder=placeholder maxLength= label === '휴대전화' ? "13" : label === '인증번호' ? "4" : undefined)
             span.completed ✔︎
             span.close 
-                button="✕"
+                button ✕
+            p.error-msg.hide
