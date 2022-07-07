@@ -8,11 +8,29 @@
 
 .header h1 {
   font-size: 16px;
+  line-height: 16px;
 }
 
 .header a {
   position: absolute;
-  left: 0;
   top: 50%;
   transform: translateY(-50%);
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.header__fallback {
+  left: 0;
+}
+
+.header__next {
+  right: 0;
+
+  color: var(--gray-3);
+  pointer-events: none;
+}
+
+.header__next.active {
+  color: black;
+  pointer-events: visible;
 }

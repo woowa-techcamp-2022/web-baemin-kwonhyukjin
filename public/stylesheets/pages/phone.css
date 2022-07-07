@@ -1,0 +1,42 @@
+main.phone {
+  padding: 0 15px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.phone > .customInput {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+main.phone > button {
+  margin-top: 15px;
+  width: 100%;
+
+  padding: 15px 0;
+  border-radius: 4px;
+
+  border: 1px solid black;
+}
+
+.phone > .phone__certificate-box {
+  display: none;
+}
+
+.phone > .phone__certificate-box.visible {
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+.phone > .phone__certificate-box.visible > .phone__re-certificate-btn {
+  margin-top: 25px;
+  align-self: flex-end;
+  color: var(--woowa-color);
+}
+
+.phone__certificate-btn:disabled {
+  cursor: default;
+}

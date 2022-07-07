@@ -32,6 +32,6 @@ const attachEvent = () => {
   });
 };
 
-window.onload = () => {
+window.addEventListener("DOMContentLoaded", () => {
   attachEvent();
-};
+});

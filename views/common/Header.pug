@@ -1,7 +1,12 @@
-mixin Header(text, fallback)
+mixin Header(text, fallback, next)
     header(class="header")
         h1=text
         if (fallback === '/' || fallback === '/signin')
             a(class="header__fallback" href=fallback)="X"
         else if (fallback !== undefined)
             a(class="header__fallback" href=fallback)="<"
+        
+        if (next === '/signup/email')
+            a(class="header__next" href=next)="다음"
+        if (next === '/signin')
+            a(class="header__next" href=next)="완료"
