@@ -1,11 +1,17 @@
-export const getIsPhoneValid = (value) => {
+export const getIsPhoneValid = (phoneNum) => {
   return (
-    typeof value === "string" &&
-    value.length === 13 &&
-    /^010-[0-9]{4}-[0-9]{4}$/.test(value)
+    typeof phoneNum === "string" &&
+    phoneNum.length === 13 &&
+    /^010-[0-9]{4}-[0-9]{4}$/.test(phoneNum)
   );
 };
 
-export const getIsCertificateNumValid = (value) => {
-  return typeof value === "string" && value.length === 4;
+export const getIsCertificateNumValid = (certification) => {
+  return typeof certification === "string" && certification.length === 4;
+};
+
+export const getIsEmailValid = (email) => {
+  return (
+    typeof email === "string" && /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)
+  );
 };

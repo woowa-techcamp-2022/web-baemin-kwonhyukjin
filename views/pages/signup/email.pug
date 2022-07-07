@@ -1,5 +1,26 @@
 extends ../../layout
+include ../../common/Header
+include ../../common/CustomInput
+
+block stylesheet
+  link(rel="stylesheet", href="/stylesheets/pages/email.css")
+  link(rel="stylesheet", href="/stylesheets/common/Header.css")
+  link(rel="stylesheet", href="/stylesheets/common/CustomInput.css")
 
 block content
-  h1 this is email page
-  p gogo
+  main.email 
+    +Header('회원가입', '/signup/phone', '/signin')
+
+    .email__email-input-box
+      +CustomInput('이메일', '이메일을 입력해주세요.', "email__email-input")
+      button 중복확인
+
+    .email__other-input-box 
+      +CustomInput('닉네임', '닉네임을 입력해주세요.', "email__nickname-input")
+      +CustomInput('비밀번호', '비밀번호를 입력해주세요.', "email__pwd-input")
+      +CustomInput('생년월일', '생년월일을 입력해주세요.', "email__birth-input")
+
+
+
+  script(src="/javascripts/customInput.js" type="module")
+  script(src="/javascripts/email.js" type="module")
