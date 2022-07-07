@@ -26,3 +26,10 @@ main.email {
 .email__other-input-box {
   display: none;
 }
+
+.email__other-input-box.visible {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}

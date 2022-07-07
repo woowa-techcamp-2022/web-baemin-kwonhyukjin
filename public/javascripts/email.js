@@ -6,11 +6,13 @@ const checkDuplicationBtn = $(".email__email-input-box > button");
 
 const validEmailCheckbox = $(".email__email-input .completed");
 
+const otherInputBox = $(".email__other-input-box");
+
 const attachEvent = () => {
-  checkDuplicationBtn.addEventListener("click", (e) => {
+  checkDuplicationBtn.addEventListener("click", () => {
     const isEmailValid = getIsEmailValid(emailInput.value);
-    console.log(isEmailValid, emailInput.value);
     validEmailCheckbox.classList.toggle("valid", isEmailValid);
+    otherInputBox.classList.toggle("visible", isEmailValid);
   });
 };
 
