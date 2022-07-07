@@ -44,7 +44,11 @@
   border-bottom: 1px solid var(--gray-1);
 }
 
-.customInput.focused > .customInput__wrapper {
+.customInput__wrapper.error {
+  border-bottom: 1px solid red;
+}
+
+.customInput.focused > .customInput__wrapper:not(.error) {
   border-bottom: 1px solid black;
 }
 
@@ -52,7 +56,7 @@
   display: none;
 }
 
-.customInput.focused > .customInput__wrapper > .completed {
+.customInput.focused > .customInput__wrapper > .completed:not(.valid) {
   display: none;
 }
 
@@ -70,4 +74,17 @@
 
 .customInput__wrapper > input::placeholder {
   color: var(--gray-1);
+}
+
+.customInput.focused .completed.valid + .close {
+  display: none;
+}
+
+.customInput .error-msg:not(.hide) {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(calc(100% + 1px));
+
+  color: red;
+  font-size: 12px;
 }

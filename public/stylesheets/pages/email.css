@@ -1,0 +1,35 @@
+main.email {
+  padding: 0 15px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.email__email-input-box {
+  margin-top: 50px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.email__email-input-box > button {
+  line-height: 35px;
+  padding: 0 15px;
+  border: 1px solid var(--gray-1);
+  border-radius: 8px;
+}
+
+.email__email-input {
+  flex: 1;
+}
+
+.email__other-input-box {
+  display: none;
+}
+
+.email__other-input-box.visible {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
