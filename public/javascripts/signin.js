@@ -12,6 +12,8 @@ form.addEventListener("submit", (e) => {
   if (pwd.value.trim() === "") pwd.classList.add("error");
 
   if (email.value.trim() !== "" && pwd.value.trim() !== "") {
+    email.classList.remove("error");
+    pwd.classList.remove("error");
     /**
      * TODO :: 로그인 구현하기
      */

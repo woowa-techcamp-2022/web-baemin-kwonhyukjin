@@ -49,6 +49,10 @@
   position: relative;
 }
 
+.signinPage__form > form > input.error {
+  border-bottom: 1px solid red;
+}
+
 .signinPage__form > form > input[id="email"].error + span::after {
   position: absolute;
   bottom: 10px;
