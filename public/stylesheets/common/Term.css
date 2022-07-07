@@ -1,0 +1,65 @@
+.term {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.term input[type="checkbox"] {
+  display: none;
+}
+
+.term > label.real {
+  font-size: 14px;
+}
+
+.term input[type="checkbox"] + label.fake {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--gray-1);
+  position: relative;
+  margin-right: 10px;
+}
+
+.term input[type="checkbox"] + label.fake {
+  border: none;
+}
+
+.term input[type="checkbox"] + label.fake::before {
+  content: "✔";
+  font-size: 15px;
+  line-height: 25px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+
+  background-color: var(--gray-1);
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.term input[type="checkbox"]:checked + label.fake::before {
+  content: "✔";
+  font-size: 15px;
+  line-height: 25px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+
+  background-color: var(--woowa-color);
+  color: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.term > a {
+  content: ">";
+  font-size: 16px;
+
+  position: absolute;
+  right: 0;
+}

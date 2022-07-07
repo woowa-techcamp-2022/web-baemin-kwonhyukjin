@@ -1,0 +1,8 @@
+main.terms {
+  padding: 0 15px;
+}
+
+.terms > h2 > p {
+  font-size: 18px;
+  font-weight: 500;
+}

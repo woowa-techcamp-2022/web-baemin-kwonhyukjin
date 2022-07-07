@@ -1,5 +1,16 @@
 extends ../../layout
+include ../../common/Header
+include ../../common/Term
+
+block stylesheet
+  link(rel="stylesheet", href="/stylesheets/common/Header.css")
+  link(rel="stylesheet", href="/stylesheets/common/Term.css")
+  link(rel="stylesheet", href="/stylesheets/pages/terms.css")
 
 block content
-  h1 this is terms page
-  p gogo
+  main.terms
+    +Header('회원가입', '/signin')
+    h2 
+      p 어서오세요
+      p 약관동의가 필요해요
+    +Term("배달의민족 이용약관 동의", 'term1')
