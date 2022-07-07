@@ -52,7 +52,7 @@
   display: none;
 }
 
-.customInput.focused > .customInput__wrapper > .completed {
+.customInput.focused > .customInput__wrapper > .completed:not(.valid) {
   display: none;
 }
 
@@ -70,4 +70,8 @@
 
 .customInput__wrapper > input::placeholder {
   color: var(--gray-1);
+}
+
+.customInput.focused .completed.valid + .close {
+  display: none;
 }

@@ -20,7 +20,11 @@ const attachEvent = () => {
       if (!(container instanceof HTMLElement)) return;
       if (!(target instanceof HTMLElement)) return;
 
-      if (e.relatedTarget?.nodeName === "BUTTON") return;
+      if (
+        e.relatedTarget?.nodeName === "BUTTON" &&
+        e.relatedTarget?.innerText === "✕"
+      )
+        return;
 
       container.classList.remove("focused");
     });
