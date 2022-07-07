@@ -26,10 +26,21 @@ const isSubmitAvailable = () => {
   );
 };
 
-const submitUserInfo = () => {
+const submitUserInfo = async () => {
   /**
    * TODO :: 회원가입 로직 with 이메일 / 패스워드
    */
+
+  await fetch("/auth/signup", {
+    method: "POST",
+    body: JSON.stringify({
+      email: emailInput.value,
+      password: passwordInput.value,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 };
 
 const attachEvent = () => {
@@ -72,9 +83,10 @@ const attachEvent = () => {
     });
   })();
 
-  submitButton.addEventListener("click", (e) => {
+  submitButton.addEventListener("click", async (e) => {
     e.preventDefault();
-    submitUserInfo();
+    await submitUserInfo();
+    window.location.href = e.target.href;
   });
 };
 

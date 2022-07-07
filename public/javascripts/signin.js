@@ -2,7 +2,7 @@ import { $ } from "./utils/easy-selector.js";
 
 const form = $(".signinPage__form");
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const target = e.target;
@@ -17,5 +17,16 @@ form.addEventListener("submit", (e) => {
     /**
      * TODO :: 로그인 구현하기
      */
+
+    await fetch("/auth/signin", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email.value.trim(),
+        password: pwd.value.trim(),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   }
 });

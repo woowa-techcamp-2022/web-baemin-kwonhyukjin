@@ -4,7 +4,7 @@ include ../common/WoowaButton
 
 
 mixin plainInput(placeholder, type, id)
-  input(class="plainInput", type=type, placeholder=placeholder id=id || '')
+  input(class="plainInput" name=id type=type, placeholder=placeholder id=id || '')
 
 block stylesheet
   link(rel="stylesheet", href="/stylesheets/common/Header.css")
@@ -16,12 +16,12 @@ block content
     +Header('', '/')
 
     .signinPage__form
-      form(action="#") 
+      form(action="/auth/signin" method="POST") 
         +plainInput("아이디 또는 이메일", "text", 'email')
         span 
-        +plainInput("비밀번호", "password", 'pwd')
+        +plainInput("비밀번호", "password", 'password')
         span
-        +WoowaButton
+        +WoowaButton()
           | 로그인
     
     .signinPage__find
