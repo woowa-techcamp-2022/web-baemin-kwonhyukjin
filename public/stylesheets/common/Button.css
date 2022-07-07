@@ -1,8 +1,10 @@
 .woowaButton {
+  width: 100%;
   padding: 15px 0;
   background-color: var(--woowa-color);
   color: white;
   font-size: 16px;
 
   border-radius: 8px;
+  text-align: center;
 }
