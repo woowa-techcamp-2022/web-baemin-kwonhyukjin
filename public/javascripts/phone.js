@@ -41,6 +41,7 @@ const attachEvent = () => {
       .replace(/(\-{1,2})$/g, "");
 
     const isPhoneValid = getIsPhoneValid(target.value);
+
     validPhoneCheckBox.classList.toggle("valid", isPhoneValid);
 
     if (isPhoneValid) {

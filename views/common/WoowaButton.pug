@@ -1,9 +1,9 @@
-mixin WoowaButton(disabled=true)
+mixin WoowaButton(disabled=false)
     if (disabled)
         button.woowaButton(disabled)
             if block
                 block
     else 
-        button.woowaButton
+        button.woowaButton(type="submit")
             if block
                 block

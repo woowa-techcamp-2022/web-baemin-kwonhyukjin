@@ -58,7 +58,7 @@
   font-size: 10px;
 }
 
-.signinPage__form > form > input[id="pwd"].error + span::after {
+.signinPage__form > form > input[id="password"].error + span::after {
   position: absolute;
   bottom: 10px;
   content: "비밀번호를 입력하세요";
@@ -101,4 +101,8 @@
 
 .signinPage__find > * {
   color: var(--gray-3);
+}
+
+.signinPage p.login-error-msg {
+  color: red;
 }

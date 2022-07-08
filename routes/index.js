@@ -1,15 +1,22 @@
-var express = require("express");
-var router = express.Router();
-var signUpRouter = require("./signup");
+const express = require("express");
+const router = express.Router();
+const signUpRouter = require("./signup");
+const authRouter = require("./auth");
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index");
+
+function isAuthenticated(req, res, next) {
+  if (req.session.userId) next();
+  else res.render("index");
+}
+
+router.get("/", isAuthenticated, function (req, res, next) {
+  res.render("index", {
+    user: req.session.userId,
+  });
 });
 
-router.get("/signin", function (req, res, next) {
-  res.render("signin");
-});
+router.use("/", authRouter);
 
 router.use("/signup", signUpRouter);
 

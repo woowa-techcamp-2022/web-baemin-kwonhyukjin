@@ -13,7 +13,7 @@ export const errorMessages = {
 export const getIsPhoneValid = (phoneNum) => {
   return (
     typeof phoneNum === "string" &&
-    !phoneNum.length === 13 &&
+    phoneNum.length === 13 &&
     /^010-[0-9]{4}-[0-9]{4}$/.test(phoneNum)
   );
 };
