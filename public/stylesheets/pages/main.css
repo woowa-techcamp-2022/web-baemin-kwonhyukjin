@@ -10,7 +10,7 @@
   background-image: url(../../images/banner.png);
   background-position: center;
   background-color: var(--woowa-color);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
