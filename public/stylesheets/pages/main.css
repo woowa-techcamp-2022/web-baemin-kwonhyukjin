@@ -55,6 +55,8 @@
 .mainPage__menu {
   text-align: center;
   border: 1px solid var(--gray-2);
+
+  line-height: 75px;
 }
 
 .delimiter {

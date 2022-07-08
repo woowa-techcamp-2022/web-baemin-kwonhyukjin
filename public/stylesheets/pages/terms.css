@@ -87,8 +87,8 @@
 
 .terms__ageRadio > input[type="radio"]:checked + label.fake::before {
   content: "●";
-  font-size: 10px;
-  line-height: 25px;
+  font-size: 19px;
+  line-height: 29px;
   width: 25px;
   height: 25px;
   text-align: center;
