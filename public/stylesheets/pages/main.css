@@ -89,7 +89,7 @@
   font-weight: 700;
 }
 
-.mainPage__about-user > button {
+.mainPage__about-user form button {
   color: white;
 
   margin-top: 15px;

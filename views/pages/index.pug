@@ -18,7 +18,8 @@ block content
       .delimiter.woowa
       div.mainPage__about-user
         <em>#{ user.split('@')[0] }</em> 님, 반가워요!
-        button.mainPage__logout-button 로그아웃
+        form(action="/logout" method="POST") 
+          button(type="submit").mainPage__logout-button 로그아웃
       .delimiter.woowa
       .delimiter
     else
