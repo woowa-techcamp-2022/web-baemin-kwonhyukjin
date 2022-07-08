@@ -31,15 +31,15 @@ const submitUserInfo = async () => {
    * TODO :: 회원가입 로직 with 이메일 / 패스워드
    */
 
-  await fetch("/auth/signup", {
+  await fetch("/signup", {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       email: emailInput.value,
       password: passwordInput.value,
     }),
-    headers: {
-      "Content-Type": "application/json",
-    },
   });
 };
 

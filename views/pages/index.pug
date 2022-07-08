@@ -17,7 +17,8 @@ block content
       .delimiter
       .delimiter.woowa
       div.mainPage__about-user
-        <em>#{ user.split('@')[0] }</em> 님, 반가워요!
+        <em>#{ user.split('@')[0] }님, </em> 
+        | 배민에 오신 것을 환영해요!
         form(action="/logout" method="POST") 
           button(type="submit").mainPage__logout-button 로그아웃
       .delimiter.woowa
