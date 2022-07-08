@@ -8,6 +8,10 @@ const crypto = require("crypto");
 const encrpyt = (password) =>
   crypto.createHash("sha512").update(password).digest("base64");
 
+router.get("/signin", function (req, res, next) {
+  res.render("signin");
+});
+
 router.post("/signup", function (req, res, next) {
   const { email, password } = req.body;
   db.get("users")
@@ -17,21 +21,27 @@ router.post("/signup", function (req, res, next) {
     })
     .write();
 
-  res.send(200);
+  res.redirect("/signin");
 });
 
 router.post("/signin", function (req, res, next) {
   const { email, password } = req.body;
   const targetUser = db.get("users").find({ email }).value();
-  if (!targetUser) res.send(400);
+  if (!targetUser) res.render("signin", { error: "아이디가 없어요." });
 
   if (encrpyt(password) === targetUser.password) {
-    res.send(200);
+    req.session.regenerate(function (err) {
+      if (err) next(err);
 
-    /**
-     * 세션 유지
-     */
-  } else res.send(401);
+      req.session.userId = email;
+      req.session.save(function (err) {
+        if (err) return next(err);
+        res.redirect("/");
+      });
+    });
+  } else {
+    res.render("signin", { error: "비밀번호가 일치하지 않아요." });
+  }
 });
 
 module.exports = router;

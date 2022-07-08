@@ -4,16 +4,20 @@ const signUpRouter = require("./signup");
 const authRouter = require("./auth");
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index");
+
+function isAuthenticated(req, res, next) {
+  if (req.session.userId) next();
+  else res.render("index");
+}
+
+router.get("/", isAuthenticated, function (req, res, next) {
+  res.render("index", {
+    user: req.session.userId,
+  });
 });
 
-router.get("/signin", function (req, res, next) {
-  res.render("signin");
-});
+router.use("/", authRouter);
 
 router.use("/signup", signUpRouter);
-
-router.use("/auth", authRouter);
 
 module.exports = router;

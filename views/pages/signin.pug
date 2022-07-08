@@ -16,11 +16,14 @@ block content
     +Header('', '/')
 
     .signinPage__form
-      form(action="/auth/signin" method="POST") 
+      form(action="/signin" method="POST") 
         +plainInput("아이디 또는 이메일", "text", 'email')
         span 
         +plainInput("비밀번호", "password", 'password')
         span
+
+        if error
+          p.login-error-msg=error
         +WoowaButton()
           | 로그인
     

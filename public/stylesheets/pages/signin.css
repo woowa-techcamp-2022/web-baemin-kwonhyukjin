@@ -102,3 +102,7 @@
 .signinPage__find > * {
   color: var(--gray-3);
 }
+
+.signinPage p.login-error-msg {
+  color: red;
+}

@@ -13,7 +13,16 @@ block content
 
     div(class="mainPage__banner")
 
-    +LinkTab('로그인해주세요', '/signin', '/images/profile.png')
+    if user
+      .delimiter
+      .delimiter.woowa
+      div.mainPage__about-user
+        <em>#{ user.split('@')[0] }</em> 님, 반가워요!
+        button.mainPage__logout-button 로그아웃
+      .delimiter.woowa
+      .delimiter
+    else
+      +LinkTab('로그인해주세요', '/signin', '/images/profile.png')
         
     div(class="mainPage__menuBox")
       a(class="mainPage__menu" href="#menu") A
